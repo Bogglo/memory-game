@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Memory Game with Sound</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 20px 0 10px;
+    }
+
+    .stats {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    #resetGame {
+      padding: 6px 14px;
+      font-size: 15px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+    }
+
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      width: 100px;
+      height: 100px;
+      background-color: #444;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      cursor: pointer;
+      border-radius: 8px;
+      user-select: none;
+      transition: 0.3s;
+    }
+
+    .card.flipped {
+      background-color: #fff;
+      color: #000;
+      cursor: default;
+    }
+
+    #winMessage {
+      display: none;
+      position: fixed;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      font-weight: bold;
+      color: #1e8e3e;
+      background-color: #ffffffee;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 128, 0, 0.4);
+      z-index: 999;
+      animation: fadeGlow 1s ease-in-out forwards;
+    }
+
+    #playAgain {
+      display: none;
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+      z-index: 999;
+      animation: pulseGlow 1.2s infinite ease-in-out;
+    }
+
+    @keyframes fadeGlow {
+      from { opacity: 0; transform: translate(-50%, -60%) scale(0.8); }
+      to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 12px rgba(0, 123, 255, 0.7); }
+      50% { box-shadow: 0 0 22px rgba(0, 123, 255, 1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Memory Game</h1>
+  <div class="stats">
+    ⏱️ Time: <span id="timeCounter">0</span> sec |
+    🧠 Attempts: <span id="attemptCounter">0</span>
+    <button id="resetGame">🔁 Reset</button>
+  </div>
+  <div class="game-board" id="gameBoard"></div>
+  <div id="winMessage">🎉 Win! You matched all cards!</div>
+  <button id="playAgain">Play Again</button>
+
+  <script>
+    // Local audio setup using <audio> elements
+    const soundFlip = new Audio('sound/flip.mp3');
+    const soundMatch = new Audio('sound/match.mp3');
+    const soundNoMatch = new Audio('sound/nomatch.mp3');
+    const soundWin = new Audio('sound/win.mp3');
+
+    function playSound(audio) {
+      audio.currentTime = 0;
+      audio.play();
+    }
+
+    // Game logic
+    let timer = 0;
+    let intervalId;
+    let attempts = 0;
+    let timerStarted = false;
+
+    function startTimer() {
+      timer = 0;
+      document.getElementById('timeCounter').innerText = '0';
+      clearInterval(intervalId);
+      intervalId = setInterval(() => {
+        timer++;
+        document.getElementById('timeCounter').innerText = timer;
+      }, 1000);
+    }
+
+    function resetStats() {
+      attempts = 0;
+      timerStarted = false;
+      document.getElementById('attemptCounter').innerText = '0';
+      document.getElementById('timeCounter').innerText = '0';
+      clearInterval(intervalId);
+    }
+
+    function startGame() {
+      document.getElementById('playAgain').style.display = 'none';
+      document.getElementById('winMessage').style.display = 'none';
+      document.getElementById('gameBoard').innerHTML = '';
+      resetStats();
+
+      const allEmojis = ['😀','😎','😂','😍','🥳','😈','🤖','👽'];
+      const cards = [...allEmojis, ...allEmojis].sort(() => Math.random() - 0.5);
+
+      const gameBoard = document.getElementById('gameBoard');
+      let flippedCards = [];
+      let matched = 0;
+
+      cards.forEach((emoji) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.item = emoji;
+        card.innerText = '';
+
+        card.addEventListener('click', () => {
+          if (!timerStarted) {
+            startTimer();
+            timerStarted = true;
+          }
+
+          if (card.classList.contains('flipped') || flippedCards.length === 2) return;
+
+          card.classList.add('flipped');
+          card.innerText = emoji;
+          flippedCards.push(card);
+          attempts++;
+          document.getElementById('attemptCounter').innerText = attempts;
+          playSound(soundFlip);
+
+          if (flippedCards.length === 2) {
+            const [first, second] = flippedCards;
+            if (first.dataset.item === second.dataset.item) {
+              matched++;
+              flippedCards = [];
+              playSound(soundMatch);
+
+              if (matched === allEmojis.length) {
+                clearInterval(intervalId);
+                document.getElementById('winMessage').style.display = 'block';
+                document.getElementById('playAgain').style.display = 'inline-block';
+                playSound(soundWin);
+              }
+            } else {
+              playSound(soundNoMatch);
+              setTimeout(() => {
+                first.classList.remove('flipped');
+                second.classList.remove('flipped');
+                first.innerText = '';
+                second.innerText = '';
+                flippedCards = [];
+              }, 800);
+            }
+          }
+        });
+
+        gameBoard.appendChild(card);
+      });
+    }
+
+    document.getElementById('playAgain').addEventListener('click', startGame);
+    document.getElementById('resetGame').addEventListener('click', startGame);
+
+    startGame();
+  </script>
+</body>
+</html>
