@@ -1,6 +1,6 @@
-# 🎮 Memory Game — by Bogglo
+# 🎮 Memory Game with Sound — by Bogglo
 
-A browser-based, emoji-powered memory puzzle built with pure HTML, CSS, and JavaScript. Players match card pairs while enjoying real-time tracking and fun audio effects. Designed for speed, simplicity, and engagement.
+An interactive emoji-based browser puzzle game made using HTML, CSS, and JavaScript. Players flip cards to find matching emoji pairs while tracking time and attempts — with fun sound effects and a playful win animation.
 
 ---
 
@@ -8,40 +8,40 @@ A browser-based, emoji-powered memory puzzle built with pure HTML, CSS, and Java
 
 ▶️ [Play the Game on GitHub Pages](https://bogglo.github.io/memory-game)
 
-Open directly in your browser — no setup required!
+No setup needed — just open and play!
 
 ---
 
 ## ✨ Features
 
-- 🎧 Sound effects triggered on flips, matches, mismatches, and victory  
-- ⏱️ Timer for measuring play duration  
-- 🧠 Attempt counter to track player accuracy  
-- 🕹️ Win screen with replay option  
-- 🔁 Reset button for quick retry  
-- 💻 Responsive design across devices  
-- 🎨 Visual animations with a clean emoji-based interface  
+- 🎧 Local sound effects: flip, match, mismatch, and win  
+- ⏱️ Timer to track game duration  
+- 🧠 Counter for the number of attempts  
+- 🃏 Emoji visuals instead of images  
+- 💥 Win animation and replay screen  
+- 📱 Fully responsive layout for desktop and mobile  
+- 🔁 Reset and Replay buttons for quick restarts
 
 ---
 
 ## 🕹️ How to Play
 
-1. 👆 Click any two hidden cards to reveal their emojis.  
-2. ✅ If they match, they remain visible.  
-3. ❌ If they don't, they flip back automatically.  
-4. ⏱️ Watch your time and track your attempt count.  
-5. 🧠 Keep playing until all pairs are matched!  
-6. 🎉 On completion, a celebration message and sound will appear.  
-7. 🔁 Use **Play Again** or **Reset** anytime to reshuffle the board and restart.  
+1. Click any two hidden cards to reveal the emojis.  
+2. If they match, they remain visible.  
+3. If they don’t, they flip back after a short delay.  
+4. Continue flipping until all pairs are matched.  
+5. Time and move counters help track performance.  
+6. When completed, enjoy the victory message and sound.  
+7. Use "Reset" or "Play Again" to restart the challenge.
 
-Perfect for casual players, kids, and anyone looking for a quick cognitive challenge.
+Perfect for casual play, memory practice, and quick fun!
 
 ---
 
 ## 👨‍💻 Developer
 
-Developed by **Bogglo** — focusing on creative logic, clean UI, and playful interaction.  
-🔗 GitHub Profile: [https://github.com/Bogglo](https://github.com/Bogglo)
+Made with ❤️ by **Bogglo**  
+🔗 GitHub: [https://github.com/Bogglo](https://github.com/Bogglo)
 
 ---
 
@@ -49,10 +49,3 @@ Developed by **Bogglo** — focusing on creative logic, clean UI, and playful in
 
 MIT License  
 © 2025 — All rights reserved by **Bogglo**
-
----
-
-<!-- 🔍 Invisible SEO Keywords -->
-<div hidden>
-memory game html css javascript emoji flip card audio sound effect browser game github pages bogglo responsive clean ui brain training interactive mini project animation beginner cognitive test reset play replay logic timer grid fast online creative puzzle matching game kids web development challenge
-</div>
