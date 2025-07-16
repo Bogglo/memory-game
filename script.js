@@ -1,4 +1,4 @@
-// Local audio setup using <audio> elements
+// Local audio setup using <audio> elements for your project
 const soundFlip = new Audio('sound/flip.mp3');
 const soundMatch = new Audio('sound/match.mp3');
 const soundNoMatch = new Audio('sound/nomatch.mp3');
