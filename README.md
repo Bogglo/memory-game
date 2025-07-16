@@ -40,7 +40,10 @@ Perfect for casual play, memory practice, and quick fun!
 
 ## 👨‍💻 Developer
 
-Made with ❤️ by **Bogglo**  
+Made with ❤️ by **Bogglo**
+
+Made with ❤️ by **All bayjid bishwash**
+
 🔗 GitHub: [https://github.com/Bogglo](https://github.com/Bogglo)
 
 ---
@@ -49,3 +52,4 @@ Made with ❤️ by **Bogglo**
 
 MIT License  
 © 2025 — All rights reserved by **Bogglo**
+
