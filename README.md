@@ -1,4 +1,4 @@
-# 🎮 Memory Game with Sound — by Bogglo
+# 🎮 Memory Game — by Bogglo
 
 An interactive emoji-based browser puzzle game made using HTML, CSS, and JavaScript. Players flip cards to find matching emoji pairs while tracking time and attempts — with fun sound effects and a playful win animation.
 
