@@ -3,21 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <title>Memory Game — Test Your Brain</title>
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Play the Memory Game — Test your brain with fun emoji matching! Track your time and attempts, and challenge yourself to improve." />
+  <meta name="keywords" content="Memory Game, Brain Test, Emoji Matching, Puzzle Game, Bogglo, All Bayjid, GitHub Game, HTML Game" />
+  <meta name="author" content="All Bayjid (Bogglo)" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- 🔗 Favicon and Styles -->
   <link rel="icon" type="image/png" href="image/favicon.png" />
   <link rel="stylesheet" href="style/main.css" />
 </head>
 <body>
   <h1>Memory Game<span style="color:#28a745;"></span></h1>
+
   <div class="stats">
     ⏱️ Time: <span id="timeCounter">0</span> sec |
     🧠 Attempts: <span id="attemptCounter">0</span>
     <button id="resetGame">🔁 Reset</button>
   </div>
-  <div class="game-board" id="gameBoard"></div>
-  <div id="winMessage">🎉 You win! All cards matched!</div>
-  <button id="playAgain">Play Again</button>
-  <a href="https://bogglo.github.io" target="_blank" id="loveCalc">❤️ Calculate Love</a>
 
+  <div class="game-board" id="gameBoard"></div>
+
+  <div id="winMessage">🎉 You win! All cards matched!</div>
+  <button id="playAgain">🔄 Play Again</button>
+
+  <!-- ❤️ Love Calculator Button -->
+  <div style="margin-top: 20px;">
+    <a href="https://bogglo.github.io" target="_blank" id="loveCalc" style="display:inline-block; padding:10px 20px; background-color:#ff4d6d; color:white; text-decoration:none; border-radius:5px; font-weight:bold;">
+      ❤️ Calculate Love
+    </a>
+  </div>
+
+  <!-- 🧩 Game Script -->
   <script src="script/game.js"></script>
 </body>
 </html>
