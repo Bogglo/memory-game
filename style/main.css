@@ -1,0 +1,126 @@
+/* style/main.css */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 20px 0 10px;
+}
+
+.stats {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#resetGame {
+  padding: 6px 14px;
+  font-size: 15px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #444;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.card.flipped {
+  background-color: #fff;
+  color: #000;
+  cursor: default;
+}
+
+#winMessage {
+  display: none;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e8e3e;
+  background-color: #ffffffee;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 128, 0, 0.4);
+  z-index: 999;
+  animation: fadeGlow 1s ease-in-out forwards;
+}
+
+#playAgain {
+  display: none;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  z-index: 999;
+  animation: pulseGlow 1.2s infinite ease-in-out;
+}
+
+#loveCalc {
+  margin-top: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: #ff4081;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+#loveCalc:hover {
+  background-color: #e91e63;
+}
+
+@keyframes fadeGlow {
+  from { opacity: 0; transform: translate(-50%, -60%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(0, 123, 255, 0.7); }
+  50% { box-shadow: 0 0 22px rgba(0, 123, 255, 1); }
+}
