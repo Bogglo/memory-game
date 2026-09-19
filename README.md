@@ -1,4 +1,4 @@
-# 🎮 Memory Game — by Bogglo
+# 🎮 Memory Game — by MrGoofy
 
 An interactive emoji-based browser puzzle game made using HTML, CSS, and JavaScript. Players flip cards to find matching emoji pairs while tracking time and attempts — with fun sound effects and a playful win animation.
 
@@ -6,7 +6,7 @@ An interactive emoji-based browser puzzle game made using HTML, CSS, and JavaScr
 
 ## 🔗 Live Demo
 
-▶️ [Play the Game on GitHub Pages](https://bogglo.github.io/memory-game)
+▶️ [Play the Game on GitHub Pages](https://mrgoofy.github.io/memory-game)
 
 No setup needed — just open and play!
 
@@ -40,16 +40,16 @@ Perfect for casual play, memory practice, and quick fun!
 
 ## 👨‍💻 Developer
 
-Made with ❤️ by **Bogglo**
+Made with ❤️ by **MrGoofy**
 
-Made with ❤️ by **All bayjid bishwash**
+Made with ❤️ by **MrGoofy**
 
-🔗 GitHub: [https://github.com/Bogglo](https://github.com/Bogglo)
+🔗 GitHub: [https://github.com/MrGoofy](https://github.com/MrGoofy)
 
 ---
 
 ## 📜 License
 
 MIT License  
-© 2025 — All rights reserved by **Bogglo**
+© 2025 — All rights reserved by **MrGoofy**
 
