@@ -1,55 +1,42 @@
-# 🎮 Memory Game — by MrGoofy
+# 🎮 Memory Game
 
-An interactive emoji-based browser puzzle game made using HTML, CSS, and JavaScript. Players flip cards to find matching emoji pairs while tracking time and attempts — with fun sound effects and a playful win animation.
+An interactive emoji-based browser puzzle game made with HTML, CSS, and JavaScript. Players flip cards to find matching emoji pairs while tracking time and attempts, with local sound effects and responsive layouts.
 
 ---
 
 ## 🔗 Live Demo
 
-▶️ [Play the Game on GitHub Pages](https://mrgoofy.github.io/memory-game)
+▶️ [Play the Game on GitHub Pages](https://mrgoofydev.github.io/memory-game)
 
-No setup needed — just open and play!
+No setup needed — just open and play.
 
 ---
 
 ## ✨ Features
 
-- 🎧 Local sound effects: flip, match, mismatch, and win  
-- ⏱️ Timer to track game duration  
-- 🧠 Counter for the number of attempts  
-- 🃏 Emoji visuals instead of images  
-- 💥 Win animation and replay screen  
-- 📱 Fully responsive layout for desktop and mobile  
-- 🔁 Reset and Replay buttons for quick restarts
+- Local sound effects for flips, matches, mismatches, and wins
+- Timer to track game duration
+- Counter for the number of attempts
+- Emoji-based card visuals
+- Win animation and replay screen
+- Responsive desktop and mobile layout
+- Reset and Replay controls
 
 ---
 
 ## 🕹️ How to Play
 
-1. Click any two hidden cards to reveal the emojis.  
-2. If they match, they remain visible.  
-3. If they don’t, they flip back after a short delay.  
-4. Continue flipping until all pairs are matched.  
-5. Time and move counters help track performance.  
-6. When completed, enjoy the victory message and sound.  
-7. Use "Reset" or "Play Again" to restart the challenge.
+1. Click any two hidden cards to reveal the emojis.
+2. Matching cards remain visible; non-matching cards flip back.
+3. Continue until every pair is matched.
+4. Use **Reset** or **Play Again** to restart the challenge.
 
-Perfect for casual play, memory practice, and quick fun!
+## Technologies
 
----
-
-## 👨‍💻 Developer
-
-Made with ❤️ by **MrGoofy**
-
-Made with ❤️ by **MrGoofy**
-
-🔗 GitHub: [https://github.com/MrGoofy](https://github.com/MrGoofy)
-
----
+HTML, CSS, and JavaScript.
 
 ## 📜 License
 
-MIT License  
-© 2025 — All rights reserved by **MrGoofy**
+MIT License
 
+© 2025 MrGoofyDev
